@@ -18,6 +18,18 @@ Dit project bouwt voort op het fundament en de URL-parsing logica van de [Moodle
 
 ---
 
+## 📸 Screenshots
+
+| Hoofdscherm (Light Theme) | Generatie Resultaat (Rick Roll) |
+| :---: | :---: |
+| ![Light Theme (12 Types)](screenshot_light.png) | ![YouTube Embed Result](screenshot_result.png) |
+
+| Footer & Versieaanduiding |
+| :---: |
+| ![Footer Version](screenshot_version.png) |
+
+---
+
 ## 📖 Gebruikershandleiding (User Guide)
 
 1. **Start de Applicatie**: Open de tool in je browser (lokaal draaiend op [http://localhost:5173/](http://localhost:5173/)).
