@@ -1,6 +1,6 @@
 # Moodle Embed Generator
 
-Een moderne, lichte en razendsnelle single-page web-applicatie om responsive, Moodle-veilige iframe embed code te genereren voor allerlei soorten content. Ontwikkeld om professionals die in Moodle werken te helpen pijlsnel en superintuïtief content in te sluiten zonder codeerskills.
+Een moderne, lichte en snelle single-page web-applicatie om responsive, Moodle-veilige iframe embed code te genereren voor diverse soorten content. Ontwikkeld om professionals die in Moodle werken te helpen snel en intuïtief content in te sluiten zonder codeerskills.
 
 Dit project bouwt voort op het fundament en de URL-parsing logica van de [Moodle Content Accordion Generator](https://github.com/inholland/moodle-content-accordion). In plaats van een complete accordeon genereert deze tool **één enkel responsive contentblok**.
 
