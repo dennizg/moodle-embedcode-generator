@@ -13,6 +13,7 @@ const EMBED_TITLES = {
     'youtube': 'Bekijk deze video:',
     'spotify': 'Beluister deze podcast:',
     'miro': 'Bekijk dit Miro-bord:',
+    'canva': 'Bekijk dit Canva-ontwerp:',
     'padlet': 'Bekijk dit Padlet-bord:',
     'h5p': 'Maak deze oefening:',
     'sharepoint-pdf': 'Lees dit document:',
@@ -28,6 +29,7 @@ export const generateEmbedHTML = (type, parsed) => {
     const url = typeof parsed === 'object' ? parsed.url : parsed;
     const width = typeof parsed === 'object' ? parsed.width : null;
     const height = typeof parsed === 'object' ? parsed.height : null;
+    const aspectRatio = typeof parsed === 'object' ? parsed.aspectRatio : null;
 
     if (!url) return '';
 
@@ -91,6 +93,13 @@ export const generateEmbedHTML = (type, parsed) => {
             return titleHtml + `<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px;">
     <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="${url}" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen="allowfullscreen"></iframe>
 </div>`;
+
+        case 'canva': {
+            const paddingBottom = aspectRatio ? `${aspectRatio}%` : '56.25%';
+            return titleHtml + `<div style="position: relative; padding-bottom: ${paddingBottom}; height: 0; overflow: hidden; width: 100%; max-width: 100%; border-radius: 8px;">
+    <iframe loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; padding: 0; margin: 0;" src="${url}" allow="fullscreen" allowfullscreen="allowfullscreen"></iframe>
+</div>`;
+        }
 
         case 'padlet':
             return titleHtml + `<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px;">

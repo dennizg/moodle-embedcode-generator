@@ -10,7 +10,7 @@ Dit project bouwt voort op het fundament en de URL-parsing logica van de [Moodle
 
 - **UX ontworpen voor snelheid (Kies → Plak → Klaar)**: Direct na het genereren wordt de embed code automatisch naar het klembord gekopieerd. Met één druk op de "Volgende embed maken" knop begin je direct aan de volgende.
 - **Slimme SharePoint URL Parsers**: Converteert SharePoint 'Sharing' en redirect links naar PDFs, Word-, Excel- en PowerPoint documenten automatisch naar direct embedded document viewers (`?web=1` en embed codes).
-- **H5P & Miro Integratie**: Automatiseert de conversie van standaard Miro board URLs en H5P `view.php` Links naar hun respectievelijke embed varianten.
+- **Canva, H5P & Miro Integratie**: Zet gepubliceerde Canva-insluitlinks en embedcode responsive om, en automatiseert de conversie van Miro board URLs en H5P `view.php` links.
 - **Moodle-safe HTML**: De gegenereerde HTML gebruikt uitsluitend inline styles (geen `<style>` blokken of onbekende CSS classes), om te voorkomen dat Moodle's Atto/TinyMCE editor de vormgeving stript.
 - **Responsive by Design**: Maak gebruik van de ingebouwde aspect-ratio wrapper (`padding-bottom: 56.25%` en absolute positionering) om ervoor te zorgen dat iFrames soepel meeschalen met de schermgrootte van de Moodle cursist.
 - **Automatische Titel Instructie**: Voegt automatisch een bijpassende en duidelijke `<h5>` instructietitel (zoals "Bekijk deze video:" of "Beluister deze podcast:") toe boven de ingesloten content.
@@ -45,13 +45,14 @@ Dit project bouwt voort op het fundament en de URL-parsing logica van de [Moodle
 
 ---
 
-## 🔗 Ondersteunde Content Types (12 Types)
+## 🔗 Ondersteunde Content Types (13 Types)
 
 | Type | Parser / Logica | Geprefixte Titel (`<h5>`) | Verwacht Resultaat |
 | :--- | :--- | :--- | :--- |
 | **YouTube** | `parseYoutube` | Bekijk deze video: | Responsive YouTube video embed |
 | **Spotify** | `parseSpotify` | Beluister deze podcast: | Spotify podcast speler (152px weergave) |
 | **Miro** | `parseMiro` | Bekijk dit Miro-bord: | Miro whiteboard embed |
+| **Canva** | `parseCanva` | Bekijk dit Canva-ontwerp: | Responsive gepubliceerd Canva-ontwerp |
 | **Padlet** | `parsePadlet` | Bekijk dit Padlet-bord: | Padlet prikbord embed |
 | **H5P** | `parseH5P` | Maak deze oefening: | H5P interactieve module iframe |
 | **SharePoint PDF** | `parseSharePointPDF` | Lees dit document: | SharePoint PDF-viewer met "volledig scherm" link |

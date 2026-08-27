@@ -370,6 +370,63 @@ export const parseMiro = (input) => {
 };
 
 /**
+ * Parses a published Canva design URL or Canva embed code.
+ *
+ * Canva's generated embed HTML includes a /view?embed URL and usually a
+ * padding-top percentage that represents the design's aspect ratio. Keeping
+ * that percentage makes presentations, posters and infographics responsive.
+ */
+export const parseCanva = (input) => {
+    if (!input) return null;
+
+    const cleanInput = input.trim();
+    const srcMatch = cleanInput.match(/<iframe\b[^>]*\bsrc=["']([^"']+)["']/i);
+    const legacyDesignIdMatch = cleanInput.match(/data-design-id=["']([a-zA-Z0-9_-]+)["']/i);
+    const urlValue = srcMatch
+        ? srcMatch[1]
+        : (legacyDesignIdMatch
+            ? `https://www.canva.com/design/${legacyDesignIdMatch[1]}/view?embed`
+            : cleanInput);
+
+    let urlObj;
+    try {
+        urlObj = new URL(urlValue);
+    } catch (e) {
+        return null;
+    }
+
+    const hostname = urlObj.hostname.toLowerCase();
+    if (hostname !== 'canva.com' && !hostname.endsWith('.canva.com')) {
+        return null;
+    }
+
+    // Only Canva's published design view can be embedded. Editor links need
+    // to be published from Canva first via Share > Embed.
+    if (!/^\/design\/[^/]+(?:\/[^/]+)?\/view\/?$/i.test(urlObj.pathname)) {
+        return null;
+    }
+
+    urlObj.protocol = 'https:';
+    urlObj.hostname = 'www.canva.com';
+    urlObj.search = '?embed';
+    urlObj.hash = '';
+
+    let aspectRatio = null;
+
+    if (srcMatch) {
+        const wrapperMatch = cleanInput.match(/<div\b[^>]*\bstyle=["']([^"']*padding-top\s*:\s*([\d.]+)%[^"']*)["']/i);
+        const legacyRatioMatch = cleanInput.match(/data-height-ratio=["']([\d.]+)["']/i);
+        const ratio = wrapperMatch ? Number(wrapperMatch[2]) : (legacyRatioMatch ? Number(legacyRatioMatch[1]) * 100 : null);
+
+        if (ratio && Number.isFinite(ratio) && ratio >= 10 && ratio <= 300) {
+            aspectRatio = Number(ratio.toFixed(4));
+        }
+    }
+
+    return { url: urlObj.toString(), aspectRatio };
+};
+
+/**
  * Parses a Padlet URL or embed code.
  */
 export const parsePadlet = (input) => {

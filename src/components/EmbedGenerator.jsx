@@ -10,6 +10,7 @@ import {
     parseSharePointExcel,
     parseSharePointWord,
     parseMiro,
+    parseCanva,
     parsePadlet,
     parseMicrosoftForms,
     parseGenericEmbed
@@ -21,6 +22,7 @@ const CONTENT_TYPES = [
     { key: 'youtube', label: 'YouTube', icon: 'fa-brands fa-youtube', parser: parseYoutube, placeholder: 'Plak YouTube URL, video-ID of embed code...' },
     { key: 'spotify', label: 'Spotify', icon: 'fa-brands fa-spotify', parser: parseSpotify, placeholder: 'Plak Spotify URL of embed code...' },
     { key: 'miro', label: 'Miro', icon: 'fa-solid fa-chalkboard', parser: parseMiro, placeholder: 'Plak Miro board URL of embed code...' },
+    { key: 'canva', label: 'Canva', icon: 'fa-solid fa-palette', parser: parseCanva, placeholder: 'Plak een gepubliceerde Canva-insluitlink of embed code...' },
     { key: 'padlet', label: 'Padlet', icon: 'fa-solid fa-note-sticky', parser: parsePadlet, placeholder: 'Plak Padlet URL of embed code...' },
     { key: 'h5p', label: 'H5P', icon: 'fa-solid fa-puzzle-piece', parser: parseH5P, placeholder: 'Plak H5P URL of embed code...' },
     { key: 'sharepoint-pdf', label: 'SharePoint PDF', icon: 'fa-solid fa-file-pdf', parser: parseSharePointPDF, placeholder: 'Plak SharePoint PDF URL of embed code...' },
