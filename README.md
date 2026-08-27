@@ -22,7 +22,7 @@ Dit project bouwt voort op het fundament en de URL-parsing logica van de [Moodle
 
 | Hoofdscherm (Light Theme) | Generatie Resultaat (Rick Roll) |
 | :---: | :---: |
-| ![Light Theme (12 Types)](screenshot_light.png) | ![YouTube Embed Result](screenshot_result.png) |
+| ![Light Theme (versie 1.1)](screenshot_light.png) | ![YouTube Embed Result](screenshot_result.png) |
 
 | Footer & Versieaanduiding |
 | :---: |
@@ -105,3 +105,7 @@ npm run build
 ## 📄 Licentie (License)
 
 Dit project is gepubliceerd onder de [MIT License](LICENSE).
+
+## 🗒️ Wijzigingshistorie
+
+Zie [CHANGELOG.md](CHANGELOG.md) voor nieuwe functionaliteit, beveiligingsupdates en andere wijzigingen per versie.
