@@ -15,7 +15,7 @@ Dit project bouwt voort op het fundament en de URL-parsing logica van de [Moodle
 - **Responsive by Design**: Maak gebruik van de ingebouwde aspect-ratio wrapper (`padding-bottom: 56.25%` en absolute positionering) om ervoor te zorgen dat iFrames soepel meeschalen met de schermgrootte van de Moodle cursist.
 - **Automatische Titel Instructie**: Voegt automatisch een bijpassende en duidelijke `<h5>` instructietitel (zoals "Bekijk deze video:" of "Beluister deze podcast:") toe boven de ingesloten content.
 - **Light & Dark Mode**: Een premium vormgegeven interface met een stijlvolle thema-toggle en Inholland Magenta accentkleuring.
-- **Herkenbare Favicon**: Een eigen blauw-magenta beeldmerk met codehaken en invoegpijl maakt de generator direct herkenbaar in browsertabs en favorieten.
+- **Herkenbare Favicon**: Een hoekige oranje M tussen blauwe insluithaken maakt de generator direct herkenbaar in browsertabs en favorieten.
 
 ---
 

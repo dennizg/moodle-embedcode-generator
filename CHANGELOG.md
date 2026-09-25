@@ -2,12 +2,12 @@
 
 Alle belangrijke wijzigingen aan de Moodle Embed Generator worden in dit bestand bijgehouden.
 
-## [1.3.0] - 2026-09-25
+## [1.4.0] - 2026-09-25
 
 ### Toegevoegd
 
-- Een eigen favicon in de bestaande blauw-magenta huisstijl.
-- Een herkenbaar beeldmerk met codehaken en invoegpijl, geoptimaliseerd voor kleine weergaveformaten.
+- Een eigen favicon met Moodle-oranje en het bestaande kobaltblauw.
+- Een herkenbaar beeldmerk met een hoekige M en insluithaken, geoptimaliseerd voor kleine weergaveformaten.
 
 ### Gewijzigd
 
@@ -35,5 +35,5 @@ Alle belangrijke wijzigingen aan de Moodle Embed Generator worden in dit bestand
 - README bijgewerkt naar dertien ondersteunde contenttypen.
 - Testcommando `npm test` toegevoegd.
 
-[1.3.0]: https://github.com/dennizg/moodle-embedcode-generator/compare/v1.2.0...v1.3.0
+[1.4.0]: https://github.com/dennizg/moodle-embedcode-generator/compare/v1.2.0...v1.4.0
 [1.2.0]: https://github.com/dennizg/moodle-embedcode-generator/releases/tag/v1.2.0
